@@ -1,0 +1,20 @@
+[package]
+name = "quivr-s3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "quivr_s3"
+crate-type = ["cdylib"]
+
+[dependencies]
+futures = "0.3.30"
+pyo3 = "0.20.0"
+pyo3-asyncio = { version = "0.20.0", features = [
+    "tokio-runtime",
+    "attributes",
+] }
+reqwest = { version = "0.12.5", features = ["stream"] }
+tokio = { version = "1.38.0", features = ["full"] }
+tokio-util = "0.7.11"
